@@ -8,6 +8,7 @@ declare var __moduleName: string;
   moduleId: __moduleName,
   selector: 'iii-play',
   templateUrl: 'play.component.html',
+  styleUrls: ['play.component.css'],
   directives: [CardComponent]
 })
 export class PlayComponent implements OnInit {
@@ -15,6 +16,7 @@ export class PlayComponent implements OnInit {
   header: string;
   cards: Card[];
   selectedCardId: number;
+  randomCardId: number;
 
   constructor() { }
 
@@ -30,5 +32,14 @@ export class PlayComponent implements OnInit {
       case Card.SCISSORS: this.selectedCardId = Card.SCISSORS; break;
       default: break;
     }
+    this.pickRandomCard();
+  }
+
+  private pickRandomCard() {
+    this.randomCardId = this.getRandomCardId(this.cards.length);
+  }
+
+  private getRandomCardId(max: number) {
+    return Math.floor((Math.random() * max) + 1);
   }
 }

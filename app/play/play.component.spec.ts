@@ -38,17 +38,43 @@ describe('PlayComponent', () => {
     })
   );
 
-  it('should have no selected card in the beginning',
+  it('should have no selected card id in the beginning',
     inject([PlayComponent], (component: PlayComponent) => {
+
       expect(component.selectedCardId).toEqual(undefined);
     })
   );
 
   it('should have selected SCISSORS after click on that card',
     inject([PlayComponent], (component: PlayComponent) => {
+      component.ngOnInit();
       component.onClick(Card.SCISSORS);
-      
+
       expect(component.selectedCardId).toEqual(Card.SCISSORS);
+    })
+  );
+
+  it('should have no random card id in the beginning',
+    inject([PlayComponent], (component: PlayComponent) => {
+      expect(component.randomCardId).toEqual(undefined);
+    })
+  );
+
+  it('should have selected random card id after selected PAPER by user',
+    inject([PlayComponent], (component: PlayComponent) => {
+      component.ngOnInit();
+      component.onClick(Card.PAPER);
+
+      expect(component.randomCardId).not.toEqual(undefined);
+    })
+  );
+
+  it('should have selected random card id less than or equal with num of cards, after selected ROCK by user',
+    inject([PlayComponent], (component: PlayComponent) => {
+      component.ngOnInit();
+      component.onClick(Card.ROCK);
+
+      expect(component.randomCardId).toBeLessThan(component.cards.length + 1);
     })
   );
 

@@ -9,6 +9,7 @@ declare var __moduleName: string;
   moduleId: __moduleName,
   selector: 'iii-game',
   templateUrl: 'game.component.html',
+  styleUrls: ['game.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [ROUTER_PROVIDERS]
 })

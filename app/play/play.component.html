@@ -7,12 +7,18 @@
 
 <!-- Playground -->
 <div *ngIf="selectedCardId" class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+    <div class="col-xs-5 text-right">
         <iii-card [cardId]="selectedCardId" bigCard="true"></iii-card>
+    </div>
+    <div class="col-xs-2 text-center">
+        <span class="divider">/</span>
+    </div>
+    <div class="col-xs-5 text-left">
+        <iii-card [cardId]="randomCardId" bigCard="true"></iii-card>
     </div>
 </div>
 
-<!-- Action Bar-->
+<!-- Action Bar -->
 <div class="row">
     <div class="col-xs-6 col-xs-offset-3">
         <div class="row">
