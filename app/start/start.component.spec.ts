@@ -5,8 +5,7 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import {ComponentFixture, TestComponentBuilder} from '@angular/compiler/testing';
-import {By} from '@angular/platform-browser';
+import {TestComponentBuilder} from '@angular/compiler/testing';
 
 import {StartComponent} from './start.component';
 
@@ -27,19 +26,5 @@ describe('StartComponent', () => {
       expect(component.startButtonText).toEqual('Play');
     })
   );
-
-  it('should have expected <h1> text of "Rock/Paper/Scissors Game (in progress...)"',
-    async(inject([TestComponentBuilder], (tcb: TestComponentBuilder) => {
-
-      tcb.createAsync(StartComponent).then(fixture => {
-        // fixture.detectChanges();  // would need to resolve a binding but we don't have a binding
-        let h1 = fixture.debugElement.query(el => el.name === 'h1').nativeElement;
-        h1 = fixture.debugElement.query(By.css('h1')).nativeElement;
-
-        expect(h1.innerText).toEqual('Rock/Paper/Scissors Game (in progress...)');
-
-      });
-
-    })));
 
 });

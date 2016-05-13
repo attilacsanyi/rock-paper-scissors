@@ -5,8 +5,7 @@ import {
   async, inject
 } from '@angular/core/testing';
 
-import {ComponentFixture, TestComponentBuilder} from '@angular/compiler/testing';
-import {By} from '@angular/platform-browser';
+import {TestComponentBuilder} from '@angular/compiler/testing';
 
 import {GameComponent} from './game.component';
 
