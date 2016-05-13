@@ -6,15 +6,17 @@
 </div>
 
 <!-- Playground -->
-<div *ngIf="selectedCardId" class="row">
-    <div class="col-xs-5 text-right">
-        <iii-card [cardId]="selectedCardId" bigCard="true"></iii-card>
-    </div>
-    <div class="col-xs-2 text-center">
-        <span class="divider">/</span>
-    </div>
-    <div class="col-xs-5 text-left">
-        <iii-card [cardId]="randomCardId" bigCard="true"></iii-card>
+<div class="playground">
+    <div *ngIf="selectedCardId" class="row">
+        <div class="col-xs-5 text-right">
+            <iii-card [cardId]="selectedCardId" bigCard="true"></iii-card>
+        </div>
+        <div class="col-xs-2 text-center">
+            <span class="divider">/</span>
+        </div>
+        <div class="col-xs-5 text-left">
+            <iii-card [cardId]="randomCardId" bigCard="true"></iii-card>
+        </div>
     </div>
 </div>
 
