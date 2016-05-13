@@ -7,7 +7,8 @@
     "tsc:w": "tsc -w",
     "lite": "lite-server",
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "test": "tsc && concurrently \"tsc -w\" \"karma start karma.conf.js\""
   },
   "license": "ISC",
   "dependencies": {
@@ -20,20 +21,24 @@
     "@angular/router": "2.0.0-rc.1",
     "@angular/router-deprecated": "2.0.0-rc.1",
     "@angular/upgrade": "2.0.0-rc.1",
-    
     "systemjs": "0.19.27",
     "es6-shim": "0.35.0",
     "reflect-metadata": "0.1.3",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "0.6.12",
-    
     "angular2-in-memory-web-api": "0.0.7"
   },
   "devDependencies": {
     "concurrently": "2.0.0",
+    "jasmine-core": "2.4.1",
+    "karma": "v0.13.22",
+    "karma-chrome-launcher": "v0.2.3",
+    "karma-cli": "v0.1.2",
+    "karma-htmlfile-reporter": "v0.2.2",
+    "karma-jasmine": "v0.3.8",
     "lite-server": "2.2.0",
+    "tslint": "3.8.1",
     "typescript": "1.8.10",
-    "typings": "0.8.1",
-    "tslint": "3.8.1"
+    "typings": "0.8.1"
   }
 }
