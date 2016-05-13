@@ -14,6 +14,7 @@ export class PlayComponent implements OnInit {
 
   header: string;
   cards: Card[];
+  selectedCardId: number;
 
   constructor() { }
 
@@ -24,9 +25,9 @@ export class PlayComponent implements OnInit {
 
   onClick(card: Card) {
     switch (card) {
-      case Card.ROCK: console.log('rock'); break;
-      case Card.PAPER: console.log('paper'); break;
-      case Card.SCISSORS: console.log('scissors'); break;
+      case Card.ROCK: this.selectedCardId = Card.ROCK; break;
+      case Card.PAPER: this.selectedCardId = Card.PAPER; break;
+      case Card.SCISSORS: this.selectedCardId = Card.SCISSORS; break;
       default: break;
     }
   }

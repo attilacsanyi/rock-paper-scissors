@@ -67,7 +67,7 @@ describe('CardComponent', () => {
 
   @Component({
     selector: 'iii-card-test',
-    template: '<iii-card cardId="1" bigCard="true"></iii-card>',
+    template: '<iii-card cardId="2" bigCard="true"></iii-card>',
     directives: [CardComponent]
   })
   class BigPaperCardComponentTest { }

@@ -34,7 +34,21 @@ describe('PlayComponent', () => {
     inject([PlayComponent], (component: PlayComponent) => {
       component.ngOnInit();
 
-      expect(component.cards).toEqual([Card.ROCK, Card.PAPER, Card.SCISSOR]);
+      expect(component.cards).toEqual([Card.ROCK, Card.PAPER, Card.SCISSORS]);
+    })
+  );
+
+  it('should have no selected card in the beginning',
+    inject([PlayComponent], (component: PlayComponent) => {
+      expect(component.selectedCardId).toEqual(undefined);
+    })
+  );
+
+  it('should have selected SCISSORS after click on that card',
+    inject([PlayComponent], (component: PlayComponent) => {
+      component.onClick(Card.SCISSORS);
+      
+      expect(component.selectedCardId).toEqual(Card.SCISSORS);
     })
   );
 

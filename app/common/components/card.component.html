@@ -1,12 +1,12 @@
 <span [ngSwitch]="cardId">
   <!-- ROCK -->
-  <img *ngSwitchWhen="0" src="/assets/{{cardSize}} Rock.png" alt="{{cardName}}" />
+  <img *ngSwitchWhen="1" src="/assets/{{cardSize}} Rock.png" alt="{{cardName}}" />
 
   <!-- PAPER -->
-  <img  *ngSwitchWhen="1" src="/assets/{{cardSize}} Paper.png" alt="{{cardName}}" />
+  <img  *ngSwitchWhen="2" src="/assets/{{cardSize}} Paper.png" alt="{{cardName}}" />
 
   <!-- SCISSORS -->
-  <img *ngSwitchWhen="2" src="/assets/{{cardSize}} Scissors.png" alt="{{cardName}}" />
+  <img *ngSwitchWhen="3" src="/assets/{{cardSize}} Scissors.png" alt="{{cardName}}" />
 
   <!-- UNKNOWN -->
   <span *ngSwitchDefault>Card id not exists: {{cardId}}</span>
