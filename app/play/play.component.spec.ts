@@ -109,4 +109,12 @@ describe('PlayComponent', () => {
 
   });
 
+  it('should have restart button text of "Restart"',
+    inject([PlayComponent], (component: PlayComponent) => {
+      component.ngOnInit();
+
+      expect(component.restartButtonText).toEqual('Restart');
+    })
+  );
+
 });

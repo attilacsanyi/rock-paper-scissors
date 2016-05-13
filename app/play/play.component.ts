@@ -17,12 +17,14 @@ export class PlayComponent implements OnInit {
   cards: Card[];
   selectedCardId: number;
   randomCardId: number;
+  restartButtonText: string;
 
   constructor() { }
 
   ngOnInit() {
     this.message = 'Choose your weapon!';
     this.cards = [Card.ROCK, Card.PAPER, Card.SCISSORS];
+    this.restartButtonText = 'Restart';
   }
 
   onClick(card: Card) {

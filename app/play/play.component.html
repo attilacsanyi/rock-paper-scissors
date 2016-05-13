@@ -20,13 +20,18 @@
     </div>
 </div>
 
-<!-- Action Bar -->
-<div *ngIf="canSelect()" class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+<!-- Button Bar -->
+<div class="row">
+    
+    <div *ngIf="canSelect()" class="col-xs-6 col-xs-offset-3">
         <div class="row">
             <div *ngFor="let card of cards; let i = index" class="col-xs-4">
                 <iii-card (click)="onClick(card)" [cardId]="i+1"></iii-card>
             </div>
         </div>
+    </div>
+    
+    <div *ngIf="!canSelect()" class="col-xs-6 col-xs-offset-3">
+        <button type="button" class="btn btn-success btn-block">{{restartButtonText}}</button>
     </div>
 </div>
