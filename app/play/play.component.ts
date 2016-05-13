@@ -19,14 +19,14 @@ export class PlayComponent implements OnInit {
 
   ngOnInit() {
     this.header = 'Choose your weapon!';
-    this.cards = [Card.ROCK, Card.PAPER, Card.SCISSOR];
+    this.cards = [Card.ROCK, Card.PAPER, Card.SCISSORS];
   }
 
   onClick(card: Card) {
     switch (card) {
       case Card.ROCK: console.log('rock'); break;
       case Card.PAPER: console.log('paper'); break;
-      case Card.SCISSOR: console.log('scissors'); break;
+      case Card.SCISSORS: console.log('scissors'); break;
       default: break;
     }
   }
