@@ -131,4 +131,45 @@ describe('PlayComponent', () => {
 
   });
 
+  describe('getMessage()', () => {
+
+    it('message should be "Choose your weapon!" in the beginning of the game',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+
+        expect(component.getMessage()).toEqual('Choose your weapon!');
+      })
+    );
+
+    it('message should be "Tie. Choose again!" in case of tie game',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+        component.selectedCardId = component.randomCardId = Card.PAPER;
+
+        expect(component.getMessage()).toEqual('Tie. Choose again!');
+      })
+    );
+
+    it('message should be "You won. Play again?" in case of player won',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+        component.selectedCardId = Card.PAPER;
+        component.randomCardId = Card.ROCK;
+
+        expect(component.getMessage()).toEqual('You won. Play again?');
+      })
+    );
+
+    it('message should be "You lost. Play again?" in case of player lost',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+        component.selectedCardId = Card.SCISSORS;
+        component.randomCardId = Card.ROCK;
+
+        expect(component.getMessage()).toEqual('You lost. Play again?');
+      })
+    );
+
+  });
+
 });

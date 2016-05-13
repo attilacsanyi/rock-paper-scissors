@@ -15,8 +15,8 @@ export class PlayComponent implements OnInit {
 
   message: string;
   cards: Card[];
-  selectedCardId: number;
-  randomCardId: number;
+  selectedCardId: Card;
+  randomCardId: Card;
   restartButtonText: string;
 
   constructor() { }
@@ -40,10 +40,35 @@ export class PlayComponent implements OnInit {
   canSelect() {
     return !this.selectedCardId || this.selectedCardId === this.randomCardId;
   }
-  
+
   restart() {
     this.selectedCardId = undefined;
   }
+
+  getMessage() {
+    if (!this.selectedCardId) {
+      return this.message;
+    } else {
+      let res = this.evaluate(this.selectedCardId, this.randomCardId);
+      return (res === 0) ? 'Tie. Choose again!' : (res === 1) ? 'You won. Play again?' : 'You lost. Play again?';
+    }
+  }
+
+  /*
+   * Evaluate cards.
+   * return 1 if card1 is stronger otherwise -1 or zero in case of tie
+   */
+  private evaluate(card1: Card, card2: Card) {
+    if (card1 === card2) {
+      return 0;
+    } else {
+      switch (card1) {
+        case Card.ROCK: return (card2 == Card.SCISSORS) ? 1 : -1;
+        case Card.PAPER: return (card2 == Card.ROCK) ? 1 : -1;
+        case Card.SCISSORS: return (card2 == Card.PAPER) ? 1 : -1;
+        default: return -1;
+      }
+    }
   }
 
   private pickRandomCard() {
