@@ -13,7 +13,7 @@ declare var __moduleName: string;
 })
 export class PlayComponent implements OnInit {
 
-  header: string;
+  message: string;
   cards: Card[];
   selectedCardId: number;
   randomCardId: number;
@@ -21,7 +21,7 @@ export class PlayComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.header = 'Choose your weapon!';
+    this.message = 'Choose your weapon!';
     this.cards = [Card.ROCK, Card.PAPER, Card.SCISSORS];
   }
 
@@ -33,6 +33,12 @@ export class PlayComponent implements OnInit {
       default: break;
     }
     this.pickRandomCard();
+  }
+
+  canSelect() {
+    return !this.selectedCardId || this.selectedCardId === this.randomCardId;
+  }
+  
   }
 
   private pickRandomCard() {

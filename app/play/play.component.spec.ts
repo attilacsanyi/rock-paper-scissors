@@ -26,7 +26,7 @@ describe('PlayComponent', () => {
     inject([PlayComponent], (component: PlayComponent) => {
       component.ngOnInit();
 
-      expect(component.header).toEqual('Choose your weapon!');
+      expect(component.message).toEqual('Choose your weapon!');
     })
   );
 
@@ -77,5 +77,36 @@ describe('PlayComponent', () => {
       expect(component.randomCardId).toBeLessThan(component.cards.length + 1);
     })
   );
+
+  describe('canSelect()', () => {
+
+    it('user can select in the beginning of the game',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+
+        expect(component.canSelect()).toEqual(true);
+      })
+    );
+
+    it('user can select if it was tie',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+        component.selectedCardId = component.randomCardId = Card.PAPER;
+
+        expect(component.canSelect()).toEqual(true);
+      })
+    );
+
+    it('user can not select if selected was PAPER, but reandom was SCISSORS',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+        component.selectedCardId = Card.PAPER;
+        component.randomCardId = Card.SCISSORS;
+
+        expect(component.canSelect()).toEqual(false);
+      })
+    );
+
+  });
 
 });
