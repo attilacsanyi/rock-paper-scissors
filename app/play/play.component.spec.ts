@@ -8,23 +8,23 @@ import {
 import {ComponentFixture, TestComponentBuilder} from '@angular/compiler/testing';
 import {By} from '@angular/platform-browser';
 
-import {GameComponent} from './game.component';
+import {PlayComponent} from './play.component';
 
-describe('GameComponent', () => {
+describe('PlayComponent', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [GameComponent]);
+  beforeEachProviders(() => [PlayComponent]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) { builder = tcb; }));
 
-  it('should inject the game component',
-    inject([GameComponent], (component: GameComponent) => {
+  it('should inject the play component',
+    inject([PlayComponent], (component: PlayComponent) => {
       expect(component).toBeTruthy();
     })
   );
 
-  it('should have game title of "rock paper scissors"',
-    inject([GameComponent], (component: GameComponent) => {
-      expect(component.gameTitle).toEqual('rock paper scissors');
+  it('should have header of "Choose your weapon!"',
+    inject([PlayComponent], (component: PlayComponent) => {
+      expect(component.header).toEqual('Choose your weapon!');
     })
   );
 
