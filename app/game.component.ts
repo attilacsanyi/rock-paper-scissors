@@ -4,9 +4,11 @@ declare var __moduleName: string;
 @Component({
   moduleId: __moduleName,
   selector: 'iii-game',
-  template: `<h1>Rock/Paper/Scissors Game (in progress...)</h1>`,
+  templateUrl: 'game.component.html',
 })
 export class GameComponent implements OnInit {
+  gameTitle: string = 'rock paper scissors';
+
   constructor() { }
 
   ngOnInit() { }
