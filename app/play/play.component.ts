@@ -41,6 +41,9 @@ export class PlayComponent implements OnInit {
     return !this.selectedCardId || this.selectedCardId === this.randomCardId;
   }
   
+  restart() {
+    this.selectedCardId = undefined;
+  }
   }
 
   private pickRandomCard() {

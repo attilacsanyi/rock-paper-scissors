@@ -117,4 +117,18 @@ describe('PlayComponent', () => {
     })
   );
 
+  describe('restart()', () => {
+
+    it('user can restart the game which clear the selected card id',
+      inject([PlayComponent], (component: PlayComponent) => {
+        component.ngOnInit();
+        component.onClick(Card.PAPER);
+        component.restart();
+
+        expect(component.selectedCardId).toEqual(undefined);
+      })
+    );
+
+  });
+
 });

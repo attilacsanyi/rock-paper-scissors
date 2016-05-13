@@ -32,6 +32,6 @@
     </div>
     
     <div *ngIf="!canSelect()" class="col-xs-6 col-xs-offset-3">
-        <button type="button" class="btn btn-success btn-block">{{restartButtonText}}</button>
+        <button (click)="restart()" type="button" class="btn btn-success btn-block">{{restartButtonText}}</button>
     </div>
 </div>
