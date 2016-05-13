@@ -11,6 +11,10 @@
     <!-- Icon -->
     <link rel="shortcut icon" href="favicon.ico">
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+
     <!-- 1. Load libraries -->
 
     <!-- Polyfill(s) for older browsers -->
@@ -25,10 +29,18 @@
     <script>
         System.import('app').catch(console.error.bind(console));
     </script>
+
+    <!-- 3. 3rd-party liblaries -->
+
+    <!-- Jquery -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <iii-game></ii-game>
+    <iii-game>Loading...</ii-game>
 </body>
 
 </html>
