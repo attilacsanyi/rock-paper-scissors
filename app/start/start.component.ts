@@ -9,9 +9,12 @@ declare var __moduleName: string;
   directives: [ROUTER_DIRECTIVES],
 })
 export class StartComponent implements OnInit {
-  startButtonText: string = 'Play';
+
+  startButtonText: string;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.startButtonText = 'Play';
+  }
 }

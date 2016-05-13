@@ -24,12 +24,16 @@ describe('PlayComponent', () => {
 
   it('should have header of "Choose your weapon!"',
     inject([PlayComponent], (component: PlayComponent) => {
+      component.ngOnInit();
+
       expect(component.header).toEqual('Choose your weapon!');
     })
   );
 
   it('should have 3 cards of "rock, paper, scissors"',
     inject([PlayComponent], (component: PlayComponent) => {
+      component.ngOnInit();
+
       expect(component.cards).toEqual([Card.ROCK, Card.PAPER, Card.SCISSOR]);
     })
   );

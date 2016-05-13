@@ -23,6 +23,8 @@ describe('StartComponent', () => {
 
   it('should have start button text of "Play"',
     inject([StartComponent], (component: StartComponent) => {
+      component.ngOnInit();
+      
       expect(component.startButtonText).toEqual('Play');
     })
   );

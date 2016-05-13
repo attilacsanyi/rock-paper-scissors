@@ -12,12 +12,15 @@ declare var __moduleName: string;
 })
 export class PlayComponent implements OnInit {
 
-  public header: string = 'Choose your weapon!';
-  public cards: Card[] = [Card.ROCK, Card.PAPER, Card.SCISSOR];
+  header: string;
+  cards: Card[];
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.header = 'Choose your weapon!';
+    this.cards = [Card.ROCK, Card.PAPER, Card.SCISSOR];
+  }
 
   onClick(card: Card) {
     switch (card) {
