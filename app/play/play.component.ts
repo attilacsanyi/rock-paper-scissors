@@ -28,12 +28,7 @@ export class PlayComponent implements OnInit {
   }
 
   onClick(card: Card) {
-    switch (card) {
-      case Card.ROCK: this.selectedCardId = Card.ROCK; break;
-      case Card.PAPER: this.selectedCardId = Card.PAPER; break;
-      case Card.SCISSORS: this.selectedCardId = Card.SCISSORS; break;
-      default: break;
-    }
+    this.selectedCardId = card;
     this.pickRandomCard();
   }
 
